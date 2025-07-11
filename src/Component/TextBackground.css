@@ -1,0 +1,98 @@
+/* TextBackground.css */
+
+.text-background-container {
+    display: flex;
+    justify-content: center;
+    /* Center the text horizontally */
+    align-items: center;
+    /* Center the text vertically if container has height */
+    /* Add any specific height or width here if needed for the container */
+    /* For example: height: 300px; */
+    /* If you just want the text to flow naturally, no specific height is needed */
+}
+
+.text-fill-effect {
+    font-size: 10em;
+    /* Adjust font size as needed (e.g., 8em, 12em) */
+    font-weight: 900;
+    /* Make it bold or ultra-bold for better fill visibility */
+    line-height: 1;
+    /* Adjust line height to control vertical spacing */
+    text-transform: uppercase;
+    /* If you want all caps like in "ELGi" */
+    /* Use a thick, bold font */
+
+    /* The core magic for background clip */
+    background-size: cover;
+    /* Cover the entire text area with the image */
+    background-position: center;
+    /* Center the image within the text */
+    -webkit-background-clip: text;
+    /* Clip the background to the shape of the text */
+    background-clip: text;
+    /* Standard property for wider support */
+
+    -webkit-text-fill-color: transparent;
+    /* Make the text itself transparent */
+    color: transparent;
+    /* Fallback for browsers that don't support -webkit-text-fill-color */
+
+    /* Optional: Add a subtle text shadow for better contrast/definition if needed */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    .text-fill-effect {
+        font-size: 6em;
+        /* Smaller font size on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-fill-effect {
+        font-size: 4em;
+        /* Even smaller font size on mobile */
+    }
+}
+
+/* TextBackground.css */
+
+.text-background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-fill-effect {
+    font-size: 10em;
+    /* Adjust font size as needed */
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+
+    background-size: cover;
+    background-position: center;
+    /* Add this line to fix the background image relative to the viewport */
+    background-attachment: fixed;
+    /* <--- ADD THIS LINE */
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    .text-fill-effect {
+        font-size: 6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-fill-effect {
+        font-size: 4em;
+    }
+}

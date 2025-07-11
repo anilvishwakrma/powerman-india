@@ -1,0 +1,40 @@
+.coming-soon-section {
+    height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+}
+
+.coming-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.coming-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.notify-form input {
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.notify-form button {
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0dcaf0;
+}
+
+.bg-dark {
+    background-color: #121212 !important;
+}

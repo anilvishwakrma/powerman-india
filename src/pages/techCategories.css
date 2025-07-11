@@ -1,0 +1,382 @@
+/* Base Styles - Keep these consistent */
+.tech-solutions-section {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+    overflow: hidden;
+    /* Ensure no overflow during animations */
+}
+
+.tech-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Heading Animation */
+.tech-section-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    /* Animation for heading on load */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+.tech-section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    /* Start scaled down */
+    width: 80px;
+    height: 4px;
+    background-color: #e4002b;
+    border-radius: 2px;
+    /* Animation for underline */
+    animation: expandUnderline 1s ease-out forwards 0.5s;
+    /* Delay it */
+}
+
+/* Keyframes for heading and underline */
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandUnderline {
+    from {
+        transform: translateX(-50%) scaleX(0);
+    }
+
+    to {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* Grid Layout and Card Animations */
+.tech-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tech-solution-card {
+    background-color: #fff;
+    padding: 40px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    /* Smooth transition for hover */
+
+    /* Initial state for card animation */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInFromBottom 0.6s ease-out forwards;
+}
+
+/* Staggered animation for cards */
+.tech-grid-layout .tech-solution-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(6) {
+    animation-delay: 0.7s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(7) {
+    animation-delay: 0.8s;
+}
+
+.tech-grid-layout .tech-solution-card:nth-child(8) {
+    animation-delay: 0.9s;
+}
+
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Hover Effect for Cards */
+.tech-solution-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    /* Lift and slightly enlarge */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* More prominent shadow */
+    background-color: #f0f0f0;
+    /* Slight background change on hover */
+}
+
+/* Icon and Image Styling */
+.tech-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    /* Important for image fitting */
+    border-radius: 50%;
+    /* Make it round */
+    box-shadow: 0 0 0 5px rgba(228, 0, 43, 0.1);
+    /* Subtle red ring */
+    transition: box-shadow 0.3s ease-out;
+}
+
+.tech-solution-card:hover .tech-icon-wrapper {
+    box-shadow: 0 0 0 8px rgba(228, 0, 43, 0.3);
+    /* Ring expands and darkens on hover */
+}
+
+.tech-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Images fill the circular wrapper */
+    transition: transform 0.3s ease-out;
+}
+
+.tech-solution-card:hover .tech-icon-wrapper img {
+    transform: scale(1.1);
+    /* Zoom in image on hover */
+}
+
+/* Text Styles */
+.tech-solution-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-out;
+}
+
+.tech-solution-card:hover .tech-solution-title {
+    color: #e4002b;
+    /* Change title color on hover */
+}
+
+.tech-solution-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* "Discover More" Link Animation */
+.tech-learn-more-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e4002b;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-out, letter-spacing 0.3s ease-out;
+}
+
+.tech-learn-more-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e4002b;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* More bouncy transition */
+}
+
+.tech-learn-more-link:hover {
+    color: #c00021;
+    letter-spacing: 1px;
+    /* Slight letter spacing increase on hover */
+}
+
+.tech-learn-more-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .tech-grid-layout {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .tech-section-heading {
+        font-size: 30px;
+    }
+
+    .tech-solution-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-solutions-section {
+        padding: 60px 0;
+    }
+
+    .tech-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-section-heading {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .tech-solution-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-section-heading {
+        font-size: 24px;
+    }
+
+    .tech-solution-title {
+        font-size: 18px;
+    }
+
+    .tech-solution-description {
+        font-size: 15px;
+    }
+
+    .tech-icon-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+
+/* ================================= */
+.research-innovation-section {
+    width: 100%;
+    background: #111;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.research-innovation-container {
+    display: flex;
+    align-items: stretch;
+    min-height: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.research-innovation-img {
+    flex: 1.2;
+    min-width: 0;
+    background: #222;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.research-innovation-img img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.research-innovation-content {
+    flex: 1.1;
+    background: #111;
+    color: #fff;
+    padding: 60px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.research-innovation-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #fff !important;
+}
+
+.research-innovation-content .subheading {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 18px;
+    color: #fff;
+    opacity: 0.85;
+}
+
+.research-innovation-content p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .research-innovation-container {
+        flex-direction: column;
+    }
+
+    .research-innovation-img img {
+        min-height: 220px;
+    }
+
+    .research-innovation-content {
+        padding: 32px 16px;
+    }
+
+    .research-innovation-content h2 {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,151 @@
+/* src/components/CustomSlickSlider.css */
+
+.custom-slick-slider-container {
+    max-width: 1200px;
+    /* Adjust max-width as needed */
+    margin: 40px auto;
+    padding: 0 20px;
+    /* Add some padding on sides */
+}
+
+/* Style for each individual slide item */
+.slick-slide-item {
+    padding: 10px;
+    /* Padding around each slide content */
+    box-sizing: border-box;
+    /* Include padding in the element's total width and height */
+}
+
+.slide-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    /* Ensure consistent height for slides */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Scale up the current active slide for emphasis */
+.slick-center .slide-content {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.slide-icon {
+    font-size: 3.5em;
+    /* Large icon size */
+    color: #007bff;
+    /* Blue color for icons */
+    margin-bottom: 20px;
+    border: 2px solid #007bff;
+    /* Add a blue border around the icon */
+    border-radius: 50%;
+    /* Make it circular */
+    padding: 15px;
+    /* Padding inside the circular border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    /* Fixed width/height for circular icon area */
+    height: 100px;
+}
+
+.slide-image {
+    max-width: 100%;
+    height: 150px;
+    /* Fixed height for images */
+    object-fit: contain;
+    /* Ensure image fits without cropping */
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.slide-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.slide-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.slide-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+    background-color: #0056b3;
+}
+
+/* Customizing Slick's default dots */
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #ccc;
+    /* Default dot color */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #007bff;
+    /* Active dot color */
+}
+
+.slick-dots {
+    bottom: 0 !important;
+}
+
+/* Customizing Slick's default arrows */
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+    /* Arrow size */
+    color: #007bff;
+    /* Arrow color */
+}
+
+/* If you're using custom arrows as components, these might not be needed for styling the arrows themselves, but for positioning */
+.slick-prev,
+.slick-next {
+    width: 50px;
+    /* Larger click area for arrows */
+    height: 50px;
+}
+
+/* Responsive adjustments for arrows */
+@media (max-width: 768px) {
+
+    .slick-prev,
+    .slick-next {
+        width: 30px;
+        height: 30px;
+        top: 45%;
+        /* Adjust vertical position */
+    }
+
+    .slick-prev {
+        left: 5px;
+    }
+
+    .slick-next {
+        right: 5px;
+    }
+}

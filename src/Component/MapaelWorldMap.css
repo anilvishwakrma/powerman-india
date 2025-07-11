@@ -1,0 +1,42 @@
+.office__wrapper-map {
+    margin: 0 auto;
+    max-width: 1500px;
+    width: 100%;
+}
+
+.office__map-wrapper {
+    aspect-ratio: 5 / 2;
+    position: relative;
+}
+
+.mapTooltip {
+    position: absolute;
+    background-color: #fd0000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+}
+
+
+.mapTooltip {
+    font-size: 16px;
+    line-height: 135%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: #000;
+    display: none;
+    font-weight: 500;
+    max-width: 200px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.office__map {
+    width: 80%;
+    margin: 0 auto;
+}

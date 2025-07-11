@@ -1,0 +1,8 @@
+.hidden,
+section {
+    overflow: hidden !important;
+}
+
+.border_buttom {
+    border-bottom: 1px solid #ccc;
+}
